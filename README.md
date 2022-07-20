@@ -4,7 +4,7 @@
   ##### Bu projede bazı bölümler basit tutulmuştur. 
   ##### Daha kapsamlı bir proje olduğunda, interface ve abstract class mantığıyla bir yapı oluşturulabilir. 
   ##### Aynı şekilde db migration ve daha kapsamlı bir ORM kullanılarak kod yazılabilir. 
-  ##### Herhangi bir cache sistemi kullanılması istenmemiş ama datayı diretk DB'den okumak yerine DB yormamak adına redis veya memcache üzerinden okunabilir.
+  ##### Herhangi bir cache sistemi kullanmadım ama datayı diretk DB'den okumak yerine DB yormamak adına redis veya memcache üzerinden okunabilir.
   ##### Projeyi dockerize etmedim yük binecek bir yapı oluşturulduğunda dockerize edip scale edilebilir.
   ##### Swagger veya benzeri bir yapı ile API çıktısı sağlanabilir.
 
