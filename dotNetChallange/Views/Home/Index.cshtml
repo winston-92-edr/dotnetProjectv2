@@ -1,0 +1,59 @@
+﻿@model dotNetChallange.Models.JSONModel.Rootobject
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>All Data</h2>
+            <table class="table table-bordered">
+                <tr>
+                    <td><b>ID</b></td>
+                    <td><b>MinPrice</b></td>
+                    <td><b>MaxPrice</b></td>
+                    <td><b>Avg</b></td>
+                    <td><b>Volume</b></td>
+                </tr>
+                @foreach (var data in ViewBag.data)
+                {
+                    <tr>
+                        <td>@data.id</td>
+                        <td>@data.low_24</td>
+                        <td>@data.high_24</td>
+                        <td>@data.avg_24h</td>
+                        <td>@data.volume_24h</td>
+                    </tr>
+
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<hr />
+
+<script>
+    $(window).on('load', function (){
+    update()
+    setInterval(function(){
+        update()
+    }, 5000)
+})
+
+function update(){
+    $.ajax({
+        type: "POST",
+        url: '@Url.Action("Index", "Batch")',
+        contentType: "application/json; charset=utf-8",
+        data: { data: "yourdata" },
+        dataType: "json",
+        success: function(recData) {  },
+        error: function() {  }
+    })
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>

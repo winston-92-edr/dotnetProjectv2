@@ -1,0 +1,33 @@
+﻿@model IEnumerable<dotNetChallange.Models.DataDbModel>
+
+@{
+    ViewBag.Title = "Last24hData";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Data for 24H</h2>
+            <table class="table table-bordered">
+                <tr>
+                    <td><b>ID</b></td>
+                    <td><b>MinPrice</b></td>
+                    <td><b>MaxPrice</b></td>
+                    <td><b>Avg</b></td>
+                    <td><b>Volume</b></td>
+                </tr>
+                @foreach (var data in ViewBag.data)
+                {
+                    <tr>
+                        <td>@data.id</td>
+                        <td>@data.low_24</td>
+                        <td>@data.high_24</td>
+                        <td>@data.avg_24h</td>
+                        <td>@data.volume_24h</td>
+                    </tr>
+
+                }
+            </table>
+        </div>
+    </div>
+</div>
